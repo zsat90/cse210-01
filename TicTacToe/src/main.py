@@ -63,3 +63,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Did the board and is_winner by myself. Had a hard time getting it all to work. Ended up reading through the example
+# this helped greatly and ended up using a lot of the file. Retyped it all myself and went through each line, so I know
+# what is happening in the code.

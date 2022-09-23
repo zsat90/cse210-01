@@ -11,6 +11,8 @@ def create_board():
 
 def display_board(board):
     print('')
+    print('This is a game of Tic-Tac-Toe. X goes first!')
+    print('')
     print(f" {board[0]} | {board[1]} | {board[2]} ")
     print('-----------')
     print(f" {board[3]} | {board[4]} | {board[5]} ")
@@ -45,9 +47,9 @@ def make_move(player, board):
 
 def next_player(current):
     if current == "" or current == "o":
-        return "x"
+        return "X"
     elif current == "x":
-        return "o"
+        return "O"
 
 
 def main():
@@ -64,6 +66,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# Did the board and is_winner by myself. Had a hard time getting it all to work. Ended up reading through the example
-# this helped greatly and ended up using a lot of the file. Retyped it all myself and went through each line, so I know
-# what is happening in the code.
+

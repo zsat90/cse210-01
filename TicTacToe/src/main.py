@@ -11,8 +11,6 @@ def create_board():
 
 def display_board(board):
     print('')
-    print('This is a game of Tic-Tac-Toe. X goes first!')
-    print('')
     print(f" {board[0]} | {board[1]} | {board[2]} ")
     print('-----------')
     print(f" {board[3]} | {board[4]} | {board[5]} ")
@@ -34,9 +32,9 @@ def is_winner(board):
 
 
 def is_draw(board):
-    for cell in range(9):
-        if board[cell] != 'x' and board[cell] != 'o':
-            return False
+    if board.count(' ') > 1:
+        return False
+    else:
         return True
 
 
@@ -45,25 +43,40 @@ def make_move(player, board):
     board[square - 1] = player
 
 
-def next_player(current):
-    if current == "" or current == "o":
-        return "X"
-    elif current == "x":
-        return "O"
+def next_player(player):
+    return 'O' if player == 'X' else 'X'
 
 
 def main():
+    print('')
+    print('This is a game of Tic-Tac-Toe. X goes first!')
     player = next_player("")
     board = create_board()
-    while not (is_winner(board) or is_draw(board)):
+    
+    while not():
         display_board(board)
         make_move(player, board)
         player = next_player(player)
-    display_board(board)
-    print("Thanks for playing!")
+        
 
+        if is_winner(board):
+            display_board(board)
+            print("")
+            print("Hooray you won the game!")
+            print("Thanks for playing!")
+            print("")
+
+        
+        if is_draw(board):
+            display_board(board)
+            print('')
+            print("It is a Tie")
+            print('')
+
+       
+    
+    
 
 if __name__ == "__main__":
     main()
-
 
